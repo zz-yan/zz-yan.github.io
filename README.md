@@ -34,9 +34,19 @@ ok now test *emphisize*, test **bold**, test _emphisize_ again.
 test list
 * list item 1
 * list item 2
+a line after item 2, will it be contact'ed to item 2?
 * list itme 3
 a line after item 3, will it be contact'ed to item 3?
-* list item 4
+* list item 4 (two spaces after)  
+a line after item 4, will it be contact'ed to item 4?
+
+test another list
+- list item 1
+- list item 2
+a line after item 2, will it be contact'ed to item 2?
+- list itme 3
+a line after item 3, will it be contact'ed to item 3?
+- list item 4 (two spaces after)  
 a line after item 4, will it be contact'ed to item 4?
 
 test quote
@@ -60,6 +70,15 @@ test  todo list
 a line after not done 3
 - [x] done 4
 a line after done 4
+
+test numbered list
+1. list item 1
+2. list item 2
+a line after item 2
+3. list item 3
+a line after item 3
+3. list item 4 (two spaces after)  
+a line after item 4
 
 
 test generic code
@@ -110,3 +129,8 @@ test table
 | 管线        |    \$1    |  234  |
 
 
+Result
+======
+
+- [x] Need two spaces for line break.
+- [x] can not support table and gantt
