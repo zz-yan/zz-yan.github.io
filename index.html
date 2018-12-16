@@ -1,4 +1,49 @@
 <html>
-<head><title>Hello</title></head>
-<body>孙大妹，你在干啥啊？</body>
+<head>
+  <title>Hello</title>
+  <script type='text/javascript'>
+
+// can not use XMLHttpRequest to get files from other domain.
+// unless github.io can reponse header with some permission flags.
+// global object
+function initXmlHttp()
+{
+  var xmlhttp = null;
+
+  if (window.XMLHttpRequest) {
+    xmlhttp = new XMLHttpRequest();
+  } else if (window.ActiveXObject) {
+    xmlhttp = new ActiveXOjbect("Microsoft.XMLHTTP");
+  }
+
+  if (!xmlhttp) {
+    window.alert("Your browser does not support XML HTTP");
+  }
+
+  return xmlhttp;
+}
+
+function loadDoc(url, f)
+{
+  xmlhttp.open("GET", url, false);
+  xmlhttp.send(null);
+
+  return xmlhttp.responseText;
+}
+
+document.ready = function() {
+
+  initXmlHttp();
+  if (!xmlhttp)
+    return;
+
+  var text = loadDoc("http://47.101.202.149");
+  var output = document.getElementById('output');
+
+  output.innerText = text;
+}
+
+  </script>
+</head>
+<body><div id='output'></div><body>
 </html>
